@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Casks | Tarik Kavaz</title>
+    <meta
+      name="description"
+      content="Install Tarik Kavaz's Mac apps with Homebrew."
+    />
+    <style>
+      :root {
+        --bg: #fafaf9;
+        --fg: #1c1917;
+        --muted: #78716c;
+        --card: #ffffff;
+        --border: #e7e5e4;
+        --code-bg: #f5f5f4;
+        --accent: #d97706;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0c0a09;
+          --fg: #f5f5f4;
+          --muted: #a8a29e;
+          --card: #171412;
+          --border: #292524;
+          --code-bg: #1c1917;
+          --accent: #fbbf24;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          sans-serif;
+        line-height: 1.6;
+      }
+      main {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 4rem 1rem 5rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 0.25rem;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin: 3rem 0 1rem;
+      }
+      p {
+        margin: 0 0 1rem;
+      }
+      .lead {
+        color: var(--muted);
+        margin-bottom: 2rem;
+      }
+      a {
+        color: var(--accent);
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      .head {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        margin-bottom: 0.9rem;
+      }
+      .head img {
+        width: 3.5rem;
+        height: 3.5rem;
+        flex: none;
+      }
+      .card h3 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+      .card .meta {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .card p {
+        margin-bottom: 0.9rem;
+      }
+      .code {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--code-bg);
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.9rem;
+      }
+      .code + .code {
+        margin-top: 0.5rem;
+      }
+      pre {
+        margin: 0;
+        flex: 1;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.85rem;
+      }
+      code {
+        font-family: inherit;
+      }
+      button {
+        flex: none;
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.75rem;
+        color: var(--fg);
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 0.375rem;
+        padding: 0.3rem 0.65rem;
+      }
+      button:hover {
+        border-color: var(--accent);
+      }
+      button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .label {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin: 0.75rem 0 0.35rem;
+      }
+      footer {
+        margin-top: 3rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Casks</h1>
+      <p class="lead">
+        Mac apps by <a href="https://tarik.kavaz.org/">Tarik Kavaz</a>,
+        installable with Homebrew.
+      </p>
+
+      <h2>Install Homebrew</h2>
+      <p>
+        Skip this if <code>brew</code> is already installed. Paste into
+        Terminal and follow the prompts.
+      </p>
+      <div class="code">
+        <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+        <button type="button" aria-label="Copy Homebrew install command">
+          Copy
+        </button>
+      </div>
+      <p class="label">
+        More options at <a href="https://brew.sh" rel="noopener noreferrer">brew.sh</a>.
+      </p>
+
+      <h2>Apps</h2>
+
+      <article class="card">
+        <div class="head">
+          <img src="icons/correctify.png" alt="" width="56" height="56" />
+          <div>
+            <h3>Correctify</h3>
+            <div class="meta">Requires macOS 27</div>
+          </div>
+        </div>
+        <p>
+          Menu bar grammar and spelling correction in any app, using your own
+          AI provider key.
+        </p>
+        <div class="code">
+          <pre><code>brew install --cask tarikkavaz/tap/correctify</code></pre>
+          <button type="button" aria-label="Copy install command for Correctify">
+            Copy
+          </button>
+        </div>
+        <p class="label">Update</p>
+        <div class="code">
+          <pre><code>brew upgrade --cask correctify</code></pre>
+          <button type="button" aria-label="Copy update command for Correctify">
+            Copy
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="head">
+          <img src="icons/cue.png" alt="" width="56" height="56" />
+          <div>
+            <h3>Cue</h3>
+            <div class="meta">Requires macOS 14 Sonoma or later</div>
+          </div>
+        </div>
+        <p>
+          Now-playing companion for Spotify Connect, with menu bar and desktop
+          widgets.
+        </p>
+        <div class="code">
+          <pre><code>brew install --cask tarikkavaz/tap/cue</code></pre>
+          <button type="button" aria-label="Copy install command for Cue">
+            Copy
+          </button>
+        </div>
+        <p class="label">Update</p>
+        <div class="code">
+          <pre><code>brew upgrade --cask cue</code></pre>
+          <button type="button" aria-label="Copy update command for Cue">
+            Copy
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="head">
+          <img src="icons/posta.png" alt="" width="56" height="56" />
+          <div>
+            <h3>Posta</h3>
+            <div class="meta">Requires macOS 14 Sonoma or later</div>
+          </div>
+        </div>
+        <p>Native Gmail client for multiple Google accounts.</p>
+        <div class="code">
+          <pre><code>brew install --cask tarikkavaz/tap/posta</code></pre>
+          <button type="button" aria-label="Copy install command for Posta">
+            Copy
+          </button>
+        </div>
+        <p class="label">Update</p>
+        <div class="code">
+          <pre><code>brew upgrade --cask posta</code></pre>
+          <button type="button" aria-label="Copy update command for Posta">
+            Copy
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="head">
+          <img src="icons/virtualremote.png" alt="" width="56" height="56" />
+          <div>
+            <h3>VirtualRemote</h3>
+            <div class="meta">Requires macOS 14 Sonoma or later</div>
+          </div>
+        </div>
+        <p>
+          Menu bar remote for the media playing on another computer on your
+          network.
+        </p>
+        <div class="code">
+          <pre><code>brew install --cask tarikkavaz/tap/virtualremote</code></pre>
+          <button
+            type="button"
+            aria-label="Copy install command for VirtualRemote"
+          >
+            Copy
+          </button>
+        </div>
+        <p class="label">Update</p>
+        <div class="code">
+          <pre><code>brew upgrade --cask virtualremote</code></pre>
+          <button
+            type="button"
+            aria-label="Copy update command for VirtualRemote"
+          >
+            Copy
+          </button>
+        </div>
+      </article>
+
+      <footer>
+        Tap source:
+        <a
+          href="https://github.com/tarikkavaz/homebrew-tap"
+          rel="me noopener noreferrer"
+          >tarikkavaz/homebrew-tap</a
+        >
+      </footer>
+    </main>
+
+    <script>
+      document.querySelectorAll(".code button").forEach(function (button) {
+        button.addEventListener("click", async function () {
+          var text = button.parentElement.querySelector("code").textContent;
+          try {
+            await navigator.clipboard.writeText(text);
+            button.textContent = "Copied";
+          } catch (error) {
+            var range = document.createRange();
+            range.selectNodeContents(button.parentElement.querySelector("code"));
+            var selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            button.textContent = "Press Cmd+C";
+          }
+          setTimeout(function () {
+            button.textContent = "Copy";
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
