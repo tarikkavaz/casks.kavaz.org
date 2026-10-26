@@ -10,24 +10,84 @@
     />
     <style>
       :root {
-        --bg: #fafaf9;
-        --fg: #1c1917;
-        --muted: #78716c;
-        --card: #ffffff;
-        --border: #e7e5e4;
-        --code-bg: #f5f5f4;
-        --accent: #d97706;
+        /* Palette taken from the app icons: navy tile, ivory glyphs, turquoise */
+        --bg: #f7f4ee;
+        --fg: #14253f;
+        --muted: #5d6c82;
+        --card: #fffef9;
+        --border: #e2ddd1;
+        --code-bg: #f0ece3;
+        --accent: #0a8f8c;
+        --glow: rgba(72, 255, 240, 0.12);
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #0c0a09;
-          --fg: #f5f5f4;
-          --muted: #a8a29e;
-          --card: #171412;
-          --border: #292524;
-          --code-bg: #1c1917;
-          --accent: #fbbf24;
+          --bg: #091422;
+          --fg: #f7f4ee;
+          --muted: #9db0c8;
+          --card: #14253f;
+          --border: #263f65;
+          --code-bg: #0d1b31;
+          --accent: #48fff0;
+          --glow: rgba(72, 255, 240, 0.1);
         }
+      }
+      body {
+        background-image: radial-gradient(
+          60rem 30rem at 50% -8rem,
+          var(--glow),
+          transparent 70%
+        );
+        background-repeat: no-repeat;
+      }
+      /* Intro text stays at reading width, only the apps use the full width */
+      main > h1,
+      main > h2,
+      main > p,
+      main > .code,
+      footer {
+        max-width: 44rem;
+      }
+      .apps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      @media (min-width: 40rem) {
+        .apps {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 62rem) {
+        .apps {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .apps .card {
+        margin-bottom: 0;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .apps .card > p:not(.label) {
+        flex: 1;
+      }
+      /* Install commands wrap inside the narrower cards instead of scrolling */
+      .apps pre {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+      /* Each card carries the main color of its app icon */
+      .card {
+        border-left: 4px solid var(--app, var(--accent));
+      }
+      .card:nth-of-type(1) { --app: #00b9b5; } /* Correctify, turquoise */
+      .card:nth-of-type(2) { --app: #8743ff; } /* Cue, violet */
+      .card:nth-of-type(3) { --app: #27a6ff; } /* Posta, blue */
+      .card:nth-of-type(4) { --app: #ffc323; } /* Stabilisator, amber */
+      .card:nth-of-type(5) { --app: #ff8067; } /* VirtualRemote, coral */
+      .card button:hover {
+        border-color: var(--app);
       }
       * {
         box-sizing: border-box;
@@ -41,9 +101,9 @@
         line-height: 1.6;
       }
       main {
-        max-width: 44rem;
+        max-width: 72rem;
         margin: 0 auto;
-        padding: 4rem 1rem 5rem;
+        padding: 4rem 1.25rem 5rem;
       }
       h1 {
         font-size: 2rem;
@@ -172,6 +232,8 @@
       </p>
 
       <h2>Apps</h2>
+
+      <div class="apps">
 
       <article class="card">
         <div class="head">
@@ -316,6 +378,7 @@
           </button>
         </div>
       </article>
+      </div>
 
       <footer>
         Tap source:
