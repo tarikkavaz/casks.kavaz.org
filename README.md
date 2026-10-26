@@ -11,7 +11,7 @@ The same host also serves the app zips that the tap's casks download, for exampl
 
 ## Server
 
-The page is served by nginx on `tarik.kavaz.org` (user `deployer`). The web root is `/home/deployer/casks`, which also holds the app folders with the release zips (`correctify/`, `cue/`, `posta/`, `virtualremote/`).
+The page is served by nginx on `tarik.kavaz.org` (user `deployer`). The web root is `/home/deployer/casks`, which also holds the app folders with the release zips (`correctify/`, `cue/`, `posta/`, `stabilisator/`, `virtualremote/`).
 
 The nginx site is `/etc/nginx/sites-available/casks.kavaz.org`. Its `location /` uses `try_files $uri $uri/ =404;` so that `/` serves `index.html`. Directory listing is off.
 
