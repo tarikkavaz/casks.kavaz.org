@@ -29,7 +29,7 @@ The `-T -o RemoteCommand=none` options are needed because the `tarik.kavaz.org` 
 
 1. Add the cask to the tap repository.
 2. Copy the app icon into `icons/` as a PNG named after the cask.
-3. Add a card to `index.html` with the description, macOS requirement, install command and update command.
+3. Add a card to `index.html` with the description, macOS requirement, and install command.
 4. Deploy with the command above.
 
 ## Updating an icon
