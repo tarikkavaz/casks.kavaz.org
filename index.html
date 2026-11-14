@@ -84,9 +84,10 @@
       .card:nth-of-type(1) { --app: #00b9b5; } /* Correctify, turquoise */
       .card:nth-of-type(2) { --app: #8743ff; } /* Cue, violet */
       .card:nth-of-type(3) { --app: #64db00; } /* Episodic, green */
-      .card:nth-of-type(4) { --app: #27a6ff; } /* Posta, blue */
-      .card:nth-of-type(5) { --app: #ffc323; } /* Stabilisator, amber */
-      .card:nth-of-type(6) { --app: #ff8067; } /* VirtualRemote, coral */
+      .card:nth-of-type(4) { --app: #ff985e; } /* Native, orange */
+      .card:nth-of-type(5) { --app: #27a6ff; } /* Posta, blue */
+      .card:nth-of-type(6) { --app: #ffc323; } /* Stabilisator, amber */
+      .card:nth-of-type(7) { --app: #ff8067; } /* VirtualRemote, coral */
       .card button:hover {
         border-color: var(--app);
       }
@@ -291,6 +292,26 @@
         <div class="code">
           <pre><code>brew install --cask tarikkavaz/tap/episodic</code></pre>
           <button type="button" aria-label="Copy install command for Episodic">
+            Copy
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="head">
+          <img src="icons/native.png?v=2" alt="" width="56" height="56" />
+          <div>
+            <h3>Native</h3>
+            <div class="meta">Requires macOS 27 or later</div>
+          </div>
+        </div>
+        <p>
+          Turns ASCII Turkish into proper Turkish while you type, in the apps
+          you choose. In English and Turkish.
+        </p>
+        <div class="code">
+          <pre><code>brew install --cask tarikkavaz/tap/native</code></pre>
+          <button type="button" aria-label="Copy install command for Native">
             Copy
           </button>
         </div>
